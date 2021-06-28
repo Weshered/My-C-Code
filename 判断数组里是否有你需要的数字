@@ -1,0 +1,28 @@
+#include <stdio.h>
+void binsearch(int x, int v[], int n);
+int main()
+{
+	int a;
+	int arr[10] = { 2, 5, 6, 8, 10, 14, 16, 19, 24, 56 };
+	int* p = &arr;
+	printf("请输入你要查找的数字->：");
+	scanf("%d", &a);
+	binsearch(a, p, 10);
+	return 0;
+}
+void binsearch(int x, int v[], int n)
+{
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		if (x == v[i])
+		{
+			printf("数组中第%d个元素值为：%d 与你所查找的数值一样\n", i+1,v[i]);
+			break;
+		}
+		else
+			sum++;
+	}
+	if (sum == n)
+		printf("数组中没有你所要的数字\n");
+}

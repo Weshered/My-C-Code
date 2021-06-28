@@ -4,10 +4,9 @@ int main()
 {
 	int a;
 	int arr[10] = { 2, 5, 6, 8, 10, 14, 16, 19, 24, 56 };
-	int* p = &arr;
 	printf("请输入你要查找的数字->：");
 	scanf("%d", &a);
-	binsearch(a, p, 10);
+	binsearch(a, arr, 10);
 	return 0;
 }
 void binsearch(int x, int v[], int n)

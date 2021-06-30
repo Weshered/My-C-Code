@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+int Max_Divisor(int x, int y);
+int main()
+{
+	int a, b;
+	printf("-----求两个数的最大公约数-----\n");
+	printf("请输入两个数（用空格隔开）：");
+	scanf("%d%d", &a, &b);
+	printf("%d和%d的最大公约数：%d\n",a,b, Max_Divisor(a, b));
+	return 0;
+}
+int Max_Divisor(int x, int y)
+{
+	int tmp = 0;
+	int cmp = 0;
+	while (tmp != y)
+	{			
+		cmp = abs(x - y);//abs()取绝对值函数，包含头文件<math.h>
+		x = y;
+		y = cmp;
+		tmp = abs(x - y);
+	}
+	return tmp;
+}
